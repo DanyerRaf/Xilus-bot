@@ -4,12 +4,12 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-        "start": "node bot.js"
+            "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "discord.js": "11.3.2"
+    "discord.js": "^11.3.2"
   }
 }
