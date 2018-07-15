@@ -4,6 +4,13 @@ const config = require("./config.json");
 
 client.on("ready", () => {
    console.log("Estoy listo!");
+client.user.setPresence( {
+       status: "online",
+       game: {
+           name: "King|Server",
+           type: "PLAYING"
+       }
+   } );
 });
 var prefix = config.prefix;
 
