@@ -1,8 +1,8 @@
 {
-  "name": "bot",
+  "name": "Discord-bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
