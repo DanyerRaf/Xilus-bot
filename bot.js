@@ -8,7 +8,7 @@ client.user.setPresence( {
        status: "online",
        game: {
            name: "King|Server",
-           type: "PLAYING"
+           type: "JUGANDO"
        }
    } );
 });
