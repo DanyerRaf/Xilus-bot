@@ -59,9 +59,6 @@ client.on("message", (message) =>
     return message.reply('El limite a eliminar es de 100 mensajes.');
   }
 }
-
-});
-
 if (command === 'invite'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
@@ -82,7 +79,9 @@ message.guild.channels.get(id).createInvite({
 NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxAge.
 
 */
-};
+}
+   
+});
   
 client.login(config.token);
 client.login(process.env.TOKEN);
