@@ -7,7 +7,7 @@ client.on("ready", () => {
 client.user.setPresence( {
        status: "online",
        game: {
-           name: "King|Server",
+           name: "League of Legends",
            type: "PLAYING"
        }
    });
