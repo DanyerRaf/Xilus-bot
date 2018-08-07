@@ -92,7 +92,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 if (command === 'help'){
 message.channel.send({embed: {
-    color: #f07c11,
+    .setColor("#f7640e");
     author: {
         name: client.user.username,
         icon_url: client.user.avatarURL
