@@ -92,7 +92,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 if (command === 'help'){
 message.channel.send({embed: {
-    color: 3447003,
+    color: #f07c11,
     author: {
         name: client.user.username,
         icon_url: client.user.avatarURL
@@ -119,7 +119,7 @@ message.channel.send({embed: {
             text: "discordlatam.com"
         }
     }
-   
+
    });
  }
 
