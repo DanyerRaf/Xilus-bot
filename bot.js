@@ -115,8 +115,8 @@ message.channel.send({embed: {
     ],
     timestamp: new Date(),
         footer: {
-            icon_url: client.user.avatarURL,
-            text: "discordlatam.com"
+            icon_url: client.author.avatarURL,
+            text: "DaFly"
         }
     }
 
