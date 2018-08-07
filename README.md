@@ -1,1 +1,2 @@
-# Discord-bot
+# Xilus-bot
+bot oficial del sevidor Xilus-Gaming!
