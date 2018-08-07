@@ -1,2 +1,2 @@
 // commands
-const clear = require('clear.js');
+const clear = require('./clear.js');
