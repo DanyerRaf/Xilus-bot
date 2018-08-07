@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const  client = new Discord.Client();
+const comando = require("./comandos/comandos.js")
 const config = require("./config.json");
 
 client.on("ready", () => {
@@ -11,7 +12,7 @@ client.user.setPresence( {
            type: "PLAYING"
        }
    });
-   
+
    client.on("guildMemberAdd", (member) => {
    console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
    var canal = client.channels.get('123456789112455845');
@@ -80,8 +81,8 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 
 */
 }
-   
+
 });
-  
+
 client.login(config.token);
 client.login(process.env.TOKEN);
