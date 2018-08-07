@@ -115,7 +115,7 @@ message.channel.send({embed: {
     ],
     timestamp: new Date(),
         footer: {
-            icon_url: client.author.avatarURL,
+            icon_url: message.author.username, message.author.avatarURL,
             text: "DaFly"
         }
     }
