@@ -15,7 +15,7 @@ client.user.setPresence( {
 
    client.on("guildMemberAdd", (member) => {
    console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
-   var canal = client.channels.get('123456789112455845');
+   var canal = client.channels.get('421749579306762263');
    canal.send(`Saludos ${member.user}, bienvenido al servidor, pasala bien.`);
 
    });
