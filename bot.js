@@ -44,7 +44,7 @@ client.on("message", (message) =>
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
   }
-  
+}
 if (command === 'invite'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
