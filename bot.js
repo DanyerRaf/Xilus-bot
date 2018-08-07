@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const  client = new Discord.Client();
-const comando = require("./comandos/comandos.js");
 const config = require("./config.json");
 
 client.on("ready", () => {
@@ -44,6 +43,21 @@ client.on("message", (message) =>
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
   }
+  if (command === 'clear'){
+     message.delete (2100);
+
+  let messageCount = parseInt(args[0]);
+
+  if(!messageCount) return message.reply('Escriba la cantidad a eliminar')
+  .then(m => {m.delete(2150);});
+
+  if(messageCount >= 2 && messageCount <= 100){
+  message.channel.fetchMessages({limit: messageCount})
+  .then(messages => message.channel.bulkDelete(messages))
+  .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+    } else{
+     return message.reply('El limite a eliminar es de 100 mensajes.');
+    }
 }
 if (command === 'invite'){
   message.delete (2000);{
