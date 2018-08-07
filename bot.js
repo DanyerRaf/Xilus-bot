@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const  client = new Discord.Client();
 const config = require("./config.json");
-const commands = require('./comandos/index.js');
+
 
 const COMMAND_GROUP = 'general';
 this.commands = comandos;
