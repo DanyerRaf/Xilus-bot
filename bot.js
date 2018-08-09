@@ -91,7 +91,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 
 */
 }
-if (command === 'help'){
+if (command === 'comandos'){
 
   message.channel.send({
       embed: {
