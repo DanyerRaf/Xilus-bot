@@ -93,7 +93,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 if (command === 'help'){
 
-let icon = client.user.displayAvatarURL;
+let icon = client.user.iconURL;
 let helpembed = new Discord.RichEmbed()
 .setTitle("Comandos")
 .setAuthor(message.author.username, message.author.avatarURL)
@@ -101,7 +101,7 @@ let helpembed = new Discord.RichEmbed()
 .setColor("#f7640e")
 .setThumbnail(message.author.avatarURL)
 .setThumbnail(icon);
-.setFooter("Pie de página, puede contener 2048 caracteres", client.user.avatarURL)
+.setFooter("Pie de página, puede contener 2048 caracteres")
 
 
   return message.channel.send(helpembed);
