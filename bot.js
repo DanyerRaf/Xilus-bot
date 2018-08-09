@@ -96,6 +96,7 @@ if (command === 'help'){
 let icon = client.user.displayAvatarURL;
 let helpembed = new Discord.RichEmbed()
 .setTitle("Comandos")
+.setAuthor(message.author.username, message.author.avatarURL)
 .setDescription("Lista de comandos del bot Xilus")
 .setColor("#f7640e")
 .setThumbnail(message.author.avatarURL)
