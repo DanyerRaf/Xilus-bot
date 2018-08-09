@@ -120,7 +120,7 @@ if (command === 'ayuda'){
           value: "`Crea una invitacion del servidor.`"
       }
       {
-          name: "ayuda"
+          name: "ayuda";
           value: "`Muestra los comandos que puedes utilizar.`"
       }
       ],
