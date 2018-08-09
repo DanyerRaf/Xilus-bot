@@ -101,7 +101,7 @@ let helpembed = new Discord.RichEmbed()
 .setColor("#f7640e")
 .setThumbnail(message.author.avatarURL)
 .setThumbnail(icon);
-
+.setFooter("Pie de página, puede contener 2048 caracteres", client.user.avatarURL)
 
 
   return message.channel.send(helpembed);
