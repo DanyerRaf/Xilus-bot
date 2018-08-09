@@ -95,7 +95,7 @@ if (command === 'help'){
 
   message.channel.send({
       embed: {
-      color: 7543290,
+      color: 8790375,
       author: {
           name: client.user.username,
           icon_url: client.user.avatarURL
