@@ -91,7 +91,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 
 */
 }
-if (command === 'comandos'){
+if (command === 'ayuda'){
 
   message.channel.send({
 
@@ -105,15 +105,23 @@ if (command === 'comandos'){
       description: "Mensaje de prueba para la descripcion del embed.",
       fields: [{
           name: "ban",
-          value: "`Borrar cierta cantidad de publicaciones.`"
+          value: "`Banear a un usuario especificado.`"
       },
       {
-          name: "Campo2",
-          value: "Puedes poner [Enlaces web](http://discordlatam.com/) dentro del embed."
+          name: "borrar",
+          value: "`Borrar cierta cantidad de publicaciones,requiere permisos.`"
       },
       {
-          name: "Campo3",
-          value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
+          name: "invitarbot",
+          value: "`Crea una invitacion del bot.`"
+      }
+      {
+          name: "invitar";
+          value: "`Crea una invitacion del servidor.`"
+      }
+      {
+          name: "ayuda"
+          value: "`Muestra los comandos que puedes utilizar.`"
       }
       ],
       timestamp: new Date(),
