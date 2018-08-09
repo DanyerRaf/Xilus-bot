@@ -93,7 +93,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 if (command === 'help'){
 
-let icon = bot.user.displayAvatarURL;
+let icon = client.user.displayAvatarURL;
 let helpembed = new Discord.RichEmbed()
 .setTitle("Comandos")
 .setDescription("Lista de comandos del bot Xilus")
