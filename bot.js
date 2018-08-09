@@ -99,7 +99,7 @@ let helpembed = new Discord.RichEmbed()
 .setDescription("Lista de comandos del bot Xilus")
 .setColor("#f7640e")
 .setThumbnail(icon);
-.setAuthor(message.author.username, message.author.avatarURL);
+.setAuthor(message.author.avatarURL);
 
 
   return message.channel.send(helpembed);
