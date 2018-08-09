@@ -7,8 +7,8 @@ client.on("ready", () => {
 client.user.setPresence( {
        status: "online",
        game: {
-           name: "League of Legends",
-           type: "PLAYING"
+           name: "Load code atom",
+           type: "LOADING"
        }
    });
 
@@ -47,7 +47,7 @@ client.on("message", (message) =>
   }
 
    // Borrar publicaciones
-   if (command === 'clear'){
+   if (command === 'borrar'){
       message.delete (2100);
 
    let messageCount = parseInt(args[0]);
@@ -65,7 +65,7 @@ client.on("message", (message) =>
 }
 
 // Generar una invitacion del bot
-if (command === 'invitebot'){
+if (command === 'invitarbot'){
   message.delete (2000);{
 client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
                       "MANAGE_MESSAGES","SEND_MESSAGES","CONNECT","BAN_MEMBERS"])
@@ -76,7 +76,7 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
  }
 
 // Generar una invitacion de Servidor
-if (command === 'invite'){
+if (command === 'invitar'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
   .setTitle("Los Invito a mi Servidor.")
@@ -99,27 +99,30 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 
 // Generar embed de ayuda
-if (command === 'help'){
+if (command === 'ayuda'){
 message.channel.send({embed: {
     color: 3447003,
     author: {
         name: client.user.username,
         icon_url: client.user.avatarURL
     },
-    title: "Enlace Embed",
-    url: "http://discordlatam.com/documentacion-mybot",
-    description: "Mensaje de prueba para la descripcion del embed.",
+    title: "Ayuda",
+    description: "Lista de comandos",
     fields: [{
-        name: "Campo1",
-        value: "Pueden tener diferentes campos con pequeñas descripciones."
+        name: "ban",
+        value: "bannear usuario/requiere permisos."
     },
     {
-        name: "Campo2",
-        value: "Puedes poner [Enlaces web](http://discordlatam.com/) dentro del embed."
+        name: "borrar",
+        value: "borrar cierta cantidad de publicaciones."
     },
     {
-        name: "Campo3",
-        value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
+        name: "invitarbot",
+        value: "genera una invitación del bot."
+    }
+    {
+        name: "invitar",
+        value: "genera una invitación del servidor"
     }
     ],
     timestamp: new Date(),
