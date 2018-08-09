@@ -44,7 +44,7 @@ client.on("message", (message) =>
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
   }
-   if (command === 'clear'){
+   if (command === 'borrar'){
       message.delete (2100);
 
    let messageCount = parseInt(args[0]);
@@ -60,7 +60,7 @@ client.on("message", (message) =>
     return message.reply('El limite a eliminar es de 100 mensajes.');
   }
 }
-if (command === 'invitebot'){
+if (command === 'invitarbot'){
   message.delete (2000);{
 client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
                       "MANAGE_MESSAGES","SEND_MESSAGES","CONNECT","BAN_MEMBERS"])
@@ -70,7 +70,7 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
    }
  }
 
-if (command === 'invite'){
+if (command === 'invitar'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
   .setTitle("Los Invito a mi Servidor.")
@@ -94,6 +94,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 if (command === 'comandos'){
 
   message.channel.send({
+
       embed: {
       color: 0xa4ff00,
       author: {
@@ -103,8 +104,8 @@ if (command === 'comandos'){
       title: "Enlace Embed",
       description: "Mensaje de prueba para la descripcion del embed.",
       fields: [{
-          name: "Campo1",
-          value: "Pueden tener diferentes campos con pequeñas descripciones."
+          name: "ban",
+          value: "`Borrar cierta cantidad de publicaciones.`"
       },
       {
           name: "Campo2",
@@ -118,7 +119,6 @@ if (command === 'comandos'){
       timestamp: new Date(),
           footer: {
               icon_url: client.user.avatarURL,
-              text: "discordlatam.com"
           }
       }
   });
