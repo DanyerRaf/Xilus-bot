@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 
-const  Client = new Discord.Client();
+const  client = new Discord.Client();
 
 client.on("ready", () => {
    console.log("Estoy listo!");
-client.user.setGame("Cargando...");
+client.user.setActivity("Loading.."; {type: "PLAYING" })
+           
 
    client.on("guildMemberAdd", (member) => {
    console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
