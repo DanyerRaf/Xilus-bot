@@ -91,11 +91,11 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 
 */
 }
-if (command === 'help'){
+if (command === 'comandos'){
 
   message.channel.send({
       embed: {
-      color: 8346234,
+      color: 9459325,
       author: {
           name: client.user.username,
           icon_url: client.user.avatarURL
