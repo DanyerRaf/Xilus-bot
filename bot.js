@@ -99,11 +99,10 @@ let helpembed = new Discord.RichEmbed()
 .setDescription("Lista de comandos del bot Xilus")
 .setColor("#f7640e")
 .setThumbnail(icon);
-.addField("Este es un título de campo, puede contener 256 caracteres")
-.addField("Campo en línea", "Debajo del campo en línea", true)
-.addBlankField(true)
-.addField("Campo en línea 3", "Puede tener un máximo de 25 campos.", true);
+
+  return message.channel.send(helpembed);
 }
+
 
 });
 
