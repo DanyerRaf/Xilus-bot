@@ -47,7 +47,7 @@ client.on("message", (message) =>
   }
 
    // Borrar publicaciones
-   if (command === 'borrar'){
+   if (command === 'clear'){
       message.delete (2100);
 
    let messageCount = parseInt(args[0]);
@@ -65,7 +65,7 @@ client.on("message", (message) =>
 }
 
 // Generar una invitacion del bot
-if (command === 'invitarbot'){
+if (command === 'invitebot'){
   message.delete (2000);{
 client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
                       "MANAGE_MESSAGES","SEND_MESSAGES","CONNECT","BAN_MEMBERS"])
@@ -76,7 +76,7 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
  }
 
 // Generar una invitacion de Servidor
-if (command === 'invitar'){
+if (command === 'invite'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
   .setTitle("Los Invito a mi Servidor.")
@@ -99,7 +99,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 }
 
 // Generar embed de ayuda
-if (command === 'ayuda'){
+if (command === 'help'){
 message.channel.send({embed: {
     color: 3447003,
     author: {
