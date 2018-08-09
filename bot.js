@@ -94,7 +94,7 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 if (command === 'help'){
 
   message.channel.send({
-    let embed: {
+      embed: {
       color: 3447003,
       author: {
           name: client.user.username,
