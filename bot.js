@@ -8,8 +8,8 @@ client.on("ready", () => {
 client.user.setPresence( {
        status: "online",
        game: {
-           name: "League of Legends",
-           type: "WATCHING"
+           name: "",
+           type: "LOADING"
        }
    });
 
