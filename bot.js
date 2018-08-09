@@ -114,11 +114,11 @@ if (command === 'ayuda'){
       {
           name: "invitarbot",
           value: "`Crea una invitacion del bot.`"
-      }
+      },
       {
           name: "invitar";
           value: "`Crea una invitacion del servidor.`"
-      }
+      },
       {
           name: "ayuda";
           value: "`Muestra los comandos que puedes utilizar.`"
