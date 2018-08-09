@@ -8,7 +8,7 @@ client.user.setPresence( {
        status: "online",
        game: {
            name: "Load code atom",
-           type: "LOADING"
+           type: "PLAYING"
        }
    });
 
