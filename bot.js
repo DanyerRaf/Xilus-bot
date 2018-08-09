@@ -117,8 +117,8 @@ timestamp: new Date(),
         icon_url: client.user.avatarURL,
 
   return message.channel.send(helpembed);
+ }
 }
-
 
 });
 
