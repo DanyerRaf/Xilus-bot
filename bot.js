@@ -105,23 +105,23 @@ if (command === 'ayuda'){
       description: "Mensaje de prueba para la descripcion del embed.",
       fields: [{
           name: "ban",
-          value: "`Banear a un usuario especificado.`"
+          value: "```css Banear a un usuario especificado.```"
       },
       {
           name: "borrar",
-          value: "`Borrar cierta cantidad de publicaciones,requiere permisos.`"
+          value: "```css Borrar cierta cantidad de publicaciones,requiere permisos.```"
       },
       {
           name: "invitarbot",
-          value: "`Crea una invitacion del bot.`"
+          value: "```css Crea una invitacion del bot.```"
       },
       {
-          name: "invitar";
-          value: "`Crea una invitacion del servidor.`"
+          name: "invitar",
+          value: "```css Crea una invitacion del servidor.```"
       },
       {
-          name: "ayuda";
-          value: "`Muestra los comandos que puedes utilizar.`"
+          name: "ayuda",
+          value: "```css Muestra los comandos que puedes utilizar.```"
       }
       ],
       timestamp: new Date(),
