@@ -7,7 +7,7 @@ client.on("ready", () => {
 client.user.setPresence( {
        status: "online",
        game: {
-           name: "League of Legends",
+           name: "loading code atom",
            type: "Jugando"
        }
    });
@@ -138,7 +138,7 @@ if(command === "botinfo"){
     return message.channel.send(botembed);
 
   }
-  
+
 
 });
 
