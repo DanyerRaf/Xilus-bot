@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const  client = new Discord.Client();
 const config = require("./config.json");
+const  client = new Discord.Client();
 
 client.on("ready", () => {
    console.log("Estoy listo!");
@@ -8,7 +8,7 @@ client.user.setPresence( {
        status: "online",
        game: {
            name: "League of Legends",
-           type: "PLAYING"
+           type: "Jugando"
        }
    });
 
@@ -28,6 +28,8 @@ client.on("message", (message) =>
 
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
+}
+// Comandos.
 
   if(command === 'ban'){
 
@@ -42,7 +44,9 @@ client.on("message", (message) =>
         message.guild.member(user).ban(razon);
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
+        return;
   }
+
    if (command === 'clear'){
       message.delete (2100);
 
@@ -58,7 +62,10 @@ client.on("message", (message) =>
    }else{
     return message.reply('El limite a eliminar es de 100 mensajes.');
   }
+
+  return;
 }
+
 if (command === 'invitebot'){
   message.delete (2000);{
 client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
@@ -67,6 +74,8 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
     message.channel.send('Link de invitación: '+ link);
   });
    }
+
+    return;
  }
 
 if (command === 'invite'){
@@ -88,8 +97,9 @@ message.guild.channels.get(id).createInvite({
 /*
 NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxAge.
 
-*/
+*/return;
 }
+
 if (command === 'help'){
 message.channel.send({embed: {
     color: 3447003,
@@ -97,16 +107,15 @@ message.channel.send({embed: {
         name: client.user.username,
         icon_url: client.user.avatarURL
     },
-    title: "Enlace Embed",
-    url: "http://discordlatam.com/documentacion-mybot",
-    description: "Mensaje de prueba para la descripcion del embed.",
+    title: "Ayuda",
+    description: "Lista de comandos",
     fields: [{
-        name: "Campo1",
-        value: "Pueden tener diferentes campos con pequeñas descripciones."
+        name: "ban",
+        value: "banear usuario determinado/requiere permisos."
     },
     {
-        name: "Campo2",
-        value: "Puedes poner [Enlaces web](http://discordlatam.com/) dentro del embed."
+        name: "clear",
+        value: "borra cierta cantidad de publicaciones especificadas."
     },
     {
         name: "Campo3",
@@ -117,12 +126,23 @@ message.channel.send({embed: {
         footer: {
             icon_url: client.user.avatarURL,
             text: "discordlatam.com"
-        }
-    }
+}
+    return;
+}
 
-   });
- }
+if(command === "botinfo"){
 
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setDescription("Bot Information")
+    .setColor("#15f153")
+    .setThumbnail(bicon)
+    .addField("Bot Name", bot.user.username)
+    .addField("Created On", bot.user.createdAt);
+
+    return message.channel.send(botembed);
+   return;
+  }
 
 });
 
