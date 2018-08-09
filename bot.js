@@ -99,25 +99,14 @@ let helpembed = new Discord.RichEmbed()
 .setDescription("Lista de comandos del bot Xilus")
 .setColor("#f7640e")
 .setThumbnail(icon);
-fields: [{
-    name: "Campo1",
-    value: "Pueden tener diferentes campos con pequeñas descripciones."
-},
-{
-    name: "Campo2",
-    value: "Puedes poner [Enlaces web](http://discordlatam.com/) dentro del embed."
-},
-{
-    name: "Campo3",
-    value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
-}
-],
-timestamp: new Date(),
-    footer: {
-        icon_url: client.user.avatarURL,
+.setFooter("Pie de página, puede contener 2048 caracteres", client.user.avatarURL);
+.addField("Este es un título de campo, puede contener 256 caracteres",
+          "Este es un valor de campo, puede contener 2048 caracteres.")
+.addField("Campo en línea", "Debajo del campo en línea", true)
+.addBlankField(true)
+.addField("Campo en línea 3", "Puede tener un máximo de 25 campos.", true);
 
-  return message.channel.send(helpembed);
- }
+
 }
 
 });
