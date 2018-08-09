@@ -1,16 +1,10 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
-const  client = new Discord.Client();
 
-client.on("ready", () => {
-   console.log("Estoy listo!");
-client.user.setPresence( {
-       status: "online",
-       game: {
-           name: "Load code atom",
-           type: "PLAYING"
-       }
-   });
+const  bot = new Discord.Client();
+
+bot.on("ready", () => {
+bot.user.setGame("Cargando...");
 
    client.on("guildMemberAdd", (member) => {
    console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
@@ -29,9 +23,6 @@ client.on("message", (message) =>
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
 
-// Cuerpo de comandos
-
-// Banear
   if(command === 'ban'){
 
         let user = message.mentions.users.first();
@@ -44,9 +35,8 @@ client.on("message", (message) =>
 
         message.guild.member(user).ban(razon);
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
-  }
 
-   // Borrar publicaciones
+  }
    if (command === 'clear'){
       message.delete (2100);
 
@@ -63,8 +53,6 @@ client.on("message", (message) =>
     return message.reply('El limite a eliminar es de 100 mensajes.');
   }
 }
-
-// Generar una invitacion del bot
 if (command === 'invitebot'){
   message.delete (2000);{
 client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
@@ -75,7 +63,6 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
    }
  }
 
-// Generar una invitacion de Servidor
 if (command === 'invite'){
   message.delete (2000);{
   const embed = new Discord.RichEmbed()
@@ -97,8 +84,6 @@ NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxA
 
 */
 }
-
-// Generar embed de ayuda
 if (command === 'help'){
 message.channel.send({embed: {
     color: 3447003,
@@ -106,35 +91,32 @@ message.channel.send({embed: {
         name: client.user.username,
         icon_url: client.user.avatarURL
     },
-    title: "Ayuda",
-    description: "Lista de comandos",
+    title: "Enlace Embed",
+    url: "http://discordlatam.com/documentacion-mybot",
+    description: "Mensaje de prueba para la descripcion del embed.",
     fields: [{
-        name: "ban",
-        value: "bannear usuario/requiere permisos."
+        name: "Campo1",
+        value: "Pueden tener diferentes campos con pequeñas descripciones."
     },
     {
-        name: "borrar",
-        value: "borrar cierta cantidad de publicaciones."
+        name: "Campo2",
+        value: "Puedes poner [Enlaces web](http://discordlatam.com/) dentro del embed."
     },
     {
-        name: "invitarbot",
-        value: "genera una invitación del bot."
-    }
-    {
-        name: "invitar",
-        value: "genera una invitación del servidor"
+        name: "Campo3",
+        value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
     }
     ],
     timestamp: new Date(),
         footer: {
             icon_url: client.user.avatarURL,
-            text: "discordlatam.com"}
-      }
+            text: "discordlatam.com"
+        }
+    }
 
    });
  }
 
-//
 
 });
 
