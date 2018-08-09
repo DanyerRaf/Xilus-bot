@@ -9,7 +9,7 @@ client.user.setPresence( {
        status: "online",
        game: {
            name: "",
-           type: "LOADING"
+           type: "LOAD"
        }
    });
 
