@@ -104,7 +104,8 @@ if (command === 'ayuda'){
       title: "Enlace Embed",
       description: "Mensaje de prueba para la descripcion del embed.",
       fields: [{
-          name: "ban",
+          name: "```css
+          ban```",
           value: "```Banear a un usuario especificado.```"
       },
       {
