@@ -28,7 +28,7 @@ client.on("message", (message) =>
 
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
-}
+
 // Comandos.
 
   if(command === 'ban'){
@@ -44,7 +44,6 @@ client.on("message", (message) =>
         message.guild.member(user).ban(razon);
         message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
-        return;
   }
 
    if (command === 'clear'){
@@ -63,7 +62,6 @@ client.on("message", (message) =>
     return message.reply('El limite a eliminar es de 100 mensajes.');
   }
 
-  return;
 }
 
 if (command === 'invitebot'){
@@ -74,8 +72,6 @@ client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
     message.channel.send('Link de invitación: '+ link);
   });
    }
-
-    return;
  }
 
 if (command === 'invite'){
@@ -97,7 +93,7 @@ message.guild.channels.get(id).createInvite({
 /*
 NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxAge.
 
-*/return;
+*/
 }
 
 if (command === 'help'){
@@ -126,8 +122,7 @@ message.channel.send({embed: {
         footer: {
             icon_url: client.user.avatarURL,
             text: "discordlatam.com"
-}
-    return;
+  }
 }
 
 if(command === "botinfo"){
@@ -141,8 +136,9 @@ if(command === "botinfo"){
     .addField("Created On", bot.user.createdAt);
 
     return message.channel.send(botembed);
-   return;
+
   }
+  
 
 });
 
