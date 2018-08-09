@@ -127,6 +127,7 @@ if (command === 'ayuda'){
       timestamp: new Date(),
           footer: {
               icon_url: client.user.avatarURL,
+              text: Bot Oficial del sservidor `xilus Game`,
           }
       }
   });
