@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 
   }
 
-module.exports.export = {
+module.exports.help = {
   name: "clear"
 
 }
