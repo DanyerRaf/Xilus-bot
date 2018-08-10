@@ -172,5 +172,5 @@ bot.on("message", (message) =>
 
 });
 
-bot.login(config.token);
-bot.login(process.env.TOKEN);
+client.login(config.token);
+client.login(process.env.TOKEN);
