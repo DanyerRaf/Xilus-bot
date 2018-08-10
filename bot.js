@@ -3,7 +3,7 @@ const  client = new Discord.Client();
 const fs = require("fs");
 const config = require("./config.json");
 
-client.commands = new Discord.Collection();
+client.comandos = new Discord.Collection();
 
 fs.readdir("./comandos/", (err, files) => {
 
