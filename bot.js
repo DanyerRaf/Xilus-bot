@@ -10,7 +10,7 @@ fs.readdir(`./commands/`,(err, files) =>{
 
   var jsfiles = files.filter(f => f.split('.').pop() === 'js');
   if (jsfiles.length <= 0) {return console.log("Comandos no encontrados...")}
-  else { console.log(jsfiles.length + 'commands found.')}
+  else { console.log(jsfiles.length + `commands found.`)}
 
   jsfiles.forEach((f, i) => {
   var cmds = require(`./commands/${f}`);
@@ -38,22 +38,22 @@ client.user.setPresence( {
    });
 });
 var prefix = config.prefix;
+if (!message.content.startsWith(prefix)) return;
+var cont = message.content.slice(prefix.length).split(" ");
+var args = cont.slice(1);
+
 
 client.on("message", (message) =>
 {
  if (!message.content.startsWith(prefix)) return;
  if (message.author.bot) return;
 
+ var cmd = client.commands.get(cont[0])
+ if (cmd) cmd.run(client, message, args);
+
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
- var cont = message.content.slice(prefix.length).split(" ");
- var args = cont.slice(1);
-
- if (!message.content.startsWith(prefix)) return;
-
- var cmd = client.commands.get(cont[0])
- if (cmd)
- cmd.run(client, message, args);
+ 
 
 //   if(command === 'ban'){
 //
