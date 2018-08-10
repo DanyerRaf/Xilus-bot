@@ -9,13 +9,13 @@ exports.run = (client, message, args) => {
           icon_url: client.user.avatarURL
       },
       title: "Comandos",
-      description: "Comandos Registrados del Bot.",
+      description: "Prefijo del bot >x ",
       fields: [{
           name: "ban",
           value: "```Banear a un usuario especificado.```"
       },
       {
-          name: "borrar",
+          name: "clear",
           value: "```Borrar cierta cantidad de publicaciones.```"
       },
       {
