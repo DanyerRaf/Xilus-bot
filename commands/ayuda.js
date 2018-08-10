@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       },
       {
           name: "borrar",
-          value: "```Borrar cierta cantidad de publicaciones,requiere permisos.```"
+          value: "```Borrar cierta cantidad de publicaciones(requiere permisos).```"
       },
       {
           name: "invitarbot",
@@ -34,7 +34,7 @@ exports.run = (client, message, args) => {
       timestamp: new Date(),
           footer: {
               icon_url: client.user.avatarURL,
-              text: "Bot Oficial del sservidor `xilus Game`",
+              text: "Bot Oficial del sservidor `Xilus Gaming`",
           }
       }
   });
