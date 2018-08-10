@@ -18,7 +18,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
   exports.conf = {
-  aliases: ['ban']
+  aliases:'ban'
   };
 module.exports.help = {
   name: "ban"
