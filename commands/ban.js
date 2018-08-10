@@ -1,7 +1,7 @@
 exports.run = (bot, message, args) => {
 
 {
-
+          message.delete (2100);
           let user = message.mentions.users.first();
           let razon = args.slice(1).join(' ');
 
