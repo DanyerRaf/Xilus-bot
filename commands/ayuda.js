@@ -13,8 +13,7 @@ module.exports.run = async (client, message, args) => {
         title: "Enlace Embed",
         description: "Mensaje de prueba para la descripcion del embed.",
         fields: [{
-            name: "```css
-            ban```",
+            name: "ban",
             value: "```Banear a un usuario especificado.```"
         },
         {
