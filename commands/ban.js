@@ -14,5 +14,5 @@ exports.run = (client, message, args) => {
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
     };
-
+message.delete (2100);
 }
