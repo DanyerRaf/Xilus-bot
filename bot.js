@@ -28,7 +28,7 @@ client.on("message", (message) =>
 
 try{
   let commandfile = require(`./commands/${cmd}.js`);
-  commandfile.run(bot, message, args);
+  commandfile.run(client, message, args);
 }catch(e) {
   console.log(e.message);
 }finally {
