@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const  bot = new Discord.Client();
-const fs = require("fs");
+const fs = require('fs');
 
-client.on("ready", async () => {
-  console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
+bot.on("ready", async () => {
+  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
 
-  client.user.setActivity("Java", {type: "WATCHING"});
+  bot.user.setActivity("Java", {type: "WATCHING"});
 
   //bot.user.setGame("on SourceCade!");
 
