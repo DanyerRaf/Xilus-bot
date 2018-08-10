@@ -1,4 +1,4 @@
-exports.run = (bot, message, args) => {
+exports.run = (client, message, args) => {
 
   message.channel.send({
         message.delete (2100);
