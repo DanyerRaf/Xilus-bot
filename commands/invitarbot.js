@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-  message.channel.send({
+  {
     message.delete (2000);{
     const embed = new Discord.RichEmbed()
     .setTitle("Los Invito a mi Servidor.")
@@ -8,6 +8,6 @@ exports.run = (client, message, args) => {
     .setAuthor(message.author.username, message.author.avatarURL);
     message.channel.send({embed});
   }
-});
+};
 
 }
