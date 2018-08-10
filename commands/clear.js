@@ -16,5 +16,5 @@ exports.run = (client, message, args) => {
       return message.reply('El limite a eliminar es de 100 mensajes.');
     }
   };
-
+ message.delete (2100);
 }
