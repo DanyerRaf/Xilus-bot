@@ -1,48 +1,25 @@
-module.exports = {
-    name: 'ban',
-    type: 'moderation',
-    usage: 'ban <user> <reason>',
-    permission: 4,
-    help: 'Bans a user and puts in moderation logs.',
-    main: function(bot, msg) {
-        const Discord = require('discord.js');
-        var banee = msg.mentions.users.array()[0];
+const Discord = require("discord.js");
 
-        if (msg.member.hasPermission('BAN_MEMBERS') === true || msg.member.hasPermission('ADMINISTRATOR') === true) {
-            try {
-                var banned = msg.guild.members.get(banee.id);
-                var user = bot.users.get(banee.id);
-                var guild = msg.guild;
-                var reason = msg.content.split(' ').splice(1).join(' ');
+module.exports.run = async (bot, message, args) => {
 
-                if (reason === '') {
-                    reason = 'Not specified.';
-                }
+          let user = message.mentions.users.first();
+          let razon = args.slice(1).join(' ');
 
-                banned.ban(reason);
+          if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
+          if(!razon) return message.channel.send('Escriba un razón, `>x ban @username [razón]`');
+          if (!message.guild.member(user).bannable) return message.reply('No puedo banear al usuario mencionado.');
 
-                msg.reply(banee + ' has been successfullly banned.');
 
-                var ban = new Discord.RichEmbed();
-                ban.setColor(0xFFB200)
-                    .setAuthor(user.username, user.avatarURL)
-                    .addField('Member Banned', `**:hammer: ${user.username}#${user.discriminator} (${user.id}) was banned from the server.**`)
-                    .addField('Responsible Moderator', msg.member.displayName)
-                    .addField('Reason', reason)
-                    .setFooter(`${guild.name} | ${guild.members.size} members`, `${guild.iconURL}`)
-                    .setTimestamp();
+          message.guild.member(user).ban(razon);
+          message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
-                try {
-                    var log = msg.guild.channels.find('name', 'mod-logs');
-                    log.send({ embed: ban });
-                } catch (e) {
-                    msg.channel.send({ embed: ban });
-                }
-            } catch (e) {
-                console.error(e);
-            }
-        } else {
-            msg.reply(' you do not have permission to perform this action!');
-        }
-    },
-};
+    }
+    module.exports = {
+        name: 'ban',
+        type: 'moderation',
+        usage: 'ban <user> <reason>',
+    }    
+module.exports.help = {
+  name: "ban"
+
+}
