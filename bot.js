@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const fs = require("fs");
-const  client = new Discord.Client();
+const  bot = new Discord.Client();
 
-client.commands = new Discord.Collection();
+bot.commands = new Discord.Collection();
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -18,14 +18,14 @@ fs.readdir("./commands/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
     console.log(`${f} loaded!`);
-    client.commands.set(props.help.name, props);
+    bot.commands.set(props.help.name, props);
   });
 
 });
 
-client.on("ready", () => {
+bot.on("ready", () => {
    console.log("Estoy listo!");
-client.user.setPresence( {
+bot.user.setPresence( {
        status: "online",
        game: {
            name: "Cargando Codigo...",
@@ -33,7 +33,7 @@ client.user.setPresence( {
        }
    });
 
-   client.on("guildMemberAdd", (member) => {
+   bot.on("guildMemberAdd", (member) => {
    console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
    var canal = client.channels.get('123456789112455845');
    canal.send(`Saludos ${member.user}, bienvenido al servidor, pasala bien.`);
@@ -42,7 +42,7 @@ client.user.setPresence( {
 });
 var prefix = config.prefix;
 
-client.on("message", (message) =>
+bot.on("message", (message) =>
 {
  if (!message.content.startsWith(prefix)) return;
  if (message.author.bot) return;
@@ -50,7 +50,7 @@ client.on("message", (message) =>
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
 
- let commandfile = client.commands.get(cmd.slice(prefix.length));
+ let commandfile = bot.commands.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,message,args);
 
 //   if(command === 'ban'){
@@ -160,5 +160,5 @@ client.on("message", (message) =>
 
 });
 
-client.login(config.token);
-client.login(process.env.TOKEN);
+bot.login(config.token);
+bot.login(process.env.TOKEN);
