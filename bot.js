@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const  client = new Discord.Client();
-const fs = require("fs")
+const fs = require("fs");
 
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
@@ -23,7 +23,7 @@ client.on("message", (message) =>
  let args = message.content.slice(prefix.length).trim().split(/ +/g);
  let cmd = args.shift().toLowerCase();
 
- if (sender.bot) return;
+ if (sender.client) return;
  if (!message.content.startsWith(prefix)) return;
 
 try{
