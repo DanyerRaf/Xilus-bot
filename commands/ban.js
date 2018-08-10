@@ -8,6 +8,7 @@ exports.run = (bot, message, args) => {
 
           if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
           .then(m => {m.delete(2150);});
+
           if(!razon) return message.channel.send('Escriba un razón, `>x ban @username [razón]`');
           if (!message.guild.member(user).bannable) return message.reply('No puedo banear al usuario mencionado.');
 
