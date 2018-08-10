@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-  message.channel.send({
+  message.channel.send(
 
       embed: {
       color: 0xa4ff00,
@@ -36,5 +36,4 @@ exports.run = (client, message, args) => {
               icon_url: client.user.avatarURL,
               text: "Bot Oficial del sservidor `xilus Game`",
           }
-      }
-  });
+      });
