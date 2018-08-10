@@ -1,6 +1,8 @@
 exports.run = (bot, message, args) => {
+
 {
-          message.delete (2000);{
+          message.delete (2000);
+
           let user = message.mentions.users.first();
           let razon = args.slice(1).join(' ');
 
@@ -11,7 +13,6 @@ exports.run = (bot, message, args) => {
 
           message.guild.member(user).ban(razon);
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
-      }
 
     };
 
