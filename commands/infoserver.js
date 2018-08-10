@@ -1,6 +1,6 @@
 exports.run = (client, message, args) => {
 
-  message.channel.send( {
+  reply message.channel.send( {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
