@@ -1,47 +1,28 @@
 const Discord = require("discord.js");
 
-module.exports.run = async (client, message, args) => {
+module.exports.run = async (bot, message, args) => {
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!rUser) return message.channel.send("Couldn't find user.");
+    let rreason = args.join(" ").slice(22);
 
-  message.channel.send({
+    let reportEmbed = new Discord.RichEmbed()
+    .setDescription("Reports")
+    .setColor("#15f153")
+    .addField("Reported User", `${rUser} with ID: ${rUser.id}`)
+    .addField("Reported By", `${message.author} with ID: ${message.author.id}`)
+    .addField("Channel", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", rreason);
 
-        embed: {
-        color: 0xa4ff00,
-        author: {
-            name: client.user.username,
-            icon_url: client.user.avatarURL
-        },
-        title: "Enlace Embed",
-        description: "Mensaje de prueba para la descripcion del embed.",
-        fields: [{
-            name: "ban",
-            value: "```Banear a un usuario especificado.```"
-        },
-        {
-            name: "borrar",
-            value: "```Borrar cierta cantidad de publicaciones,requiere permisos.```"
-        },
-        {
-            name: "invitarbot",
-            value: "```Crea una invitacion del bot.```"
-        },
-        {
-            name: "invitar",
-            value: "```Crea una invitacion del servidor.```"
-        },
-        {
-            name: "ayuda",
-            value: "```Muestra los comandos que puedes utilizar.```"
-        }
-        ],
-        timestamp: new Date(),
-            footer: {
-                icon_url: client.user.avatarURL,
-                text: "Bot Oficial del sservidor `xilus Game`",
-            }
-        }
-    });
+    let reportschannel = message.guild.channels.find(`name`, "reports");
+    if(!reportschannel) return message.channel.send("Couldn't find reports channel.");
+
+
+    message.delete().catch(O_o=>{});
+    reportschannel.send(reportEmbed);
+
 }
 
 module.exports.help = {
-  name: "ayuda"
+  name: "report"
 }
