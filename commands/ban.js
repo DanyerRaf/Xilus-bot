@@ -14,8 +14,8 @@ module.exports.run = async (bot, message, args) => {
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
     }
-    
-module.exports.help = {
+
+module.exports.config = {
   name: "ban"
 
 }
