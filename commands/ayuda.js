@@ -16,7 +16,7 @@ exports.run = (client, message, args) => {
       },
       {
           name: "borrar",
-          value: "```Borrar cierta cantidad de publicaciones(requiere permisos).```"
+          value: "```Borrar cierta cantidad de publicaciones.```"
       },
       {
           name: "invitarbot",
