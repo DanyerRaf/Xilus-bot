@@ -18,8 +18,8 @@ client.on("message", (message) =>
  if (!message.content.startsWith(prefix)) return;
  if (message.author.bot) return;
 
- let cont = message.content.slice(prefix.length).trim().split(/ +/g);
- let args = cont.shift().toLowerCase();
+ let args = message.content.slice(prefix.length).trim().split(/ +/g);
+ let cmd = cont.shift().toLowerCase();
 
   if(command === 'ban'){
 
