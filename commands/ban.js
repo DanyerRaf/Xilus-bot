@@ -1,7 +1,6 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(command === 'ban'){
 
           let user = message.mentions.users.first();
           let razon = args.slice(1).join(' ');
@@ -15,11 +14,7 @@ module.exports.run = async (bot, message, args) => {
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
     }
-  }
 
-  exports.conf = {
-  aliases:'ban'
-  };
 module.exports.help = {
   name: "ban"
 }
