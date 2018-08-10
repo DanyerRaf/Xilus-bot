@@ -3,27 +3,43 @@ const config = require("./config.json");
 const fs = require("fs");
 const  client = new Discord.Client();
 
+client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection();
 
-client.comandos = new Discord.Collection();
-
-fs.readdir("./comandos/", (err, files) => {
-
-  if(err) console.log(err);
-
-  let jsfiles = files.filter(f => f.split('.')
-  		.pop() === 'js');
-if(jsfile.length <= 0){
-  console.log("Couldn't find commands.");
-  return;
-
-  }
-  jsfile.forEach((f, i) =>{
-    let props = require(`./comandos/${f}`);
-    console.log(`${f} loaded!`);
-    client.comandos.set(props.help.name, props);
-   });
-
+fs.readdir('./commands/', (err, files) => {
+	if (err)
+		console.error(err);
+	let jsfiles = files.filter(f => f.split('.')
+		.pop() === 'js');
+	if (jsfiles.length <= 0) {
+		console.log('No commands to load!');
+		return;
+	}
+	console.log(`[Commands]\tLoaded a total amount ${files.length} Commands`);
+	jsfiles.forEach(f => {
+		let props = require(`./commands/${ f }`);
+		props.fileName = f;
+		client.commands.set(props.help.name, props);
+		props.conf.aliases.forEach(alias => {
+			client.aliases.set(alias, props.help.name);
+		});
+	});
 });
+
+// In message event
+	let msg = message.content.toLowerCase() || message.content.toUpperCase();
+	if (!msg.startsWith(prefix)) return undefined;
+	if (message.author.bot) return undefined;
+	let args = message.content.slice(prefix.length).trim().split(' ');
+	let command = args.shift().toLowerCase();
+
+	let cmd;
+	if (client.commands.has(command)) {
+		cmd = client.commands.get(command);
+	} else if (client.aliases.has(command)) {
+		cmd = client.commands.get(client.aliases.get(command));
+	}
+		cmd.run(client, message, args);
 
 client.on("ready", () => {
    console.log("Estoy listo!");
@@ -33,6 +49,7 @@ client.user.setPresence( {
            name: "Youtube.",
            type: "WATCHING"
        }
+
    });
 
    client.on("guildMemberAdd", (member) => {
