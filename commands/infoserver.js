@@ -1,10 +1,10 @@
 exports.run = (client, message, args) => {
 
- {
+  message.channel.send( {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription("Server Information")
+    .setDescription("Informacion del Servidor")
     .setColor("#15f153")
     .setThumbnail(sicon)
     .addField("Server Name", message.guild.name)
@@ -12,7 +12,7 @@ exports.run = (client, message, args) => {
     .addField("You Joined", message.member.joinedAt)
     .addField("Total Members", message.guild.memberCount);
 
-    return message.channel.send(infoserver);
-  };
+
+  });
 
 }
