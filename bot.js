@@ -5,16 +5,9 @@ const  client = new Discord.Client();
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  client.user.setActivity("tutorials on TSC", {type: "WATCHING"});
+  client.user.setActivity("Java", {type: "WATCHING"});
 
   //bot.user.setGame("on SourceCade!");
-
-   });
-
-   client.on("guildMemberAdd", (member) => {
-   console.log(`El PODEROSO ${member.user.username} se ha unido a ${member.guild.name}.`);
-   var canal = client.channels.get('123456789112455845');
-   canal.send(`Saludos ${member.user}, bienvenido al servidor, pasala bien.`);
 
    });
 
