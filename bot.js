@@ -1,9 +1,9 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
-const  bot = new Discord.Client();
+const  client = new Discord.Client();
 const fs = require("fs");
 
-bot.commands = new Discord.Collection();
+client.commands = new Discord.Collection();
 
 fs.readdir('./commands/'(err, files) =>{
   if(err) console.error(err);
@@ -15,7 +15,7 @@ fs.readdir('./commands/'(err, files) =>{
   jsfiles.forEach{(f, i) => (
   var cmds = require('./commands/${f}');
   console.log('command ${f} loading...');
-  bot.commands.set(cmds.config.command, cmds);
+  client.commands.set(cmds.config.command, cmds);
   )}
 
 })
@@ -51,9 +51,9 @@ client.on("message", (message) =>
 
  if (!message.content.startsWith(prefix)) return;
 
- var cmd = bot.commands.get(cont[0])
+ var cmd = client.commands.get(cont[0])
  if (cmd)
- cmd.run(bot, message, args);
+ cmd.run(client, message, args);
 
 //   if(command === 'ban'){
 //
