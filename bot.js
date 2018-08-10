@@ -51,7 +51,7 @@ client.on("message", (message) =>
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
 
- let commandfile = client.commands.get(cmd.slice(prefix.length));
+ let commandfile = client.comandos.get(cmd.slice(prefix.length));
   if(commandfile) commandfile.run(client,message,args);
 
 //   if(command === 'ban'){
