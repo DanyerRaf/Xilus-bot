@@ -1,7 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
-  let user = message.mentions.users.first();
+    if(command === 'ban'){
+
+          let user = message.mentions.users.first();
           let razon = args.slice(1).join(' ');
 
           if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
@@ -13,6 +15,7 @@ module.exports.run = async (bot, message, args) => {
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
 
     }
+  }
 
 module.exports.help = {
   name: "ban"
