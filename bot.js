@@ -17,7 +17,7 @@ fs.readdir("./comandos/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./comandos/${f}`);
     console.log(`${f} loaded`);
-    client.commands.set(props.help.name, props);
+    client.comandos.set(props.help.name, props);
    });
 
 });
@@ -49,7 +49,7 @@ client.on("message", (message) =>
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
 
- let commandfile = client.commands.get(command.slice(prefix.length));
+ let commandfile = client.comandos.get(command.slice(prefix.length));
  if(commandfile) commandfile.run(Client,message,args);
 
 //   if(command === 'ban'){
