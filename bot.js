@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
-const  bot = new Discord.Client();
+const  client = new Discord.Client();
 const fs = require('fs');
 
-bot.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${bot.guilds.size} servers!`);
+client.on("ready", async () => {
+  console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  bot.user.setActivity("Java", {type: "WATCHING"});
+  client.user.setActivity("Java", {type: "WATCHING"});
 
   //bot.user.setGame("on SourceCade!");
 
@@ -14,7 +14,7 @@ bot.on("ready", async () => {
 
 var prefix = config.prefix;
 
-bot.on("message", (message) =>
+client.on("message", (message) =>
 {
  if (!message.content.startsWith(prefix)) return;
  if (message.author.bot) return;
@@ -143,5 +143,5 @@ try{
 
 });
 
-bot.login(config.token);
-bot.login(process.env.TOKEN);
+client.login(config.token);
+client.login(process.env.TOKEN);
