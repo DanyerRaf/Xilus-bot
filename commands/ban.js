@@ -15,7 +15,7 @@ module.exports.run = async (client, message, args) => {
 
     }
 
-module.exports.config = {
+module.exports.help = {
   name: "ban"
 
 }
