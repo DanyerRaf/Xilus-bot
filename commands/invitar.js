@@ -1,7 +1,5 @@
 exports.run = (client, message, args) => {
 
- {
-
     message.delete (2000);{
     const embed = new Discord.RichEmbed()
     .setTitle("Los Invito a mi Servidor.")
@@ -20,6 +18,5 @@ exports.run = (client, message, args) => {
   NOTA: Tambien puede usar maxUse: 1 para el maximo uso del enlace, en vez de maxAge.
 
   */
-  };
 
 }
