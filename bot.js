@@ -5,23 +5,23 @@ const  client = new Discord.Client();
 
 client.commands = new Discord.Collection();
 
-readdir('./commands/', (err, files) => {
-    if (err) throw err;
-    client.log(`Loading ${files.length} commands!`);
-    files.forEach(f => {
-        try {
-            var name = require(`./commands/${f}`).name;
-            client.commands.set(name, require(`./commands/${f}`));
-            /* commandFile.aliases.forEach(alias => {
-                bot.aliases.set(alias, commandFile.help.name);
-            });*/
-        } catch (e) {
-            client.log(`Unable to load command ${f}: ${e}`);
-        }
-    });
-    client.log(`Commands loaded!`);
-});
+fs.readdir("./commands/", (err, files) => {
 
+  if(err) console.log(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.log(`${f} loaded!`);
+    client.commands.set(props.help.name, props);
+  });
+
+});
 
 client.on("ready", () => {
    console.log("Estoy listo!");
