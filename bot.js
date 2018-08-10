@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const fs = require("fs");
-const client = new Discord.Client({disableEveryone: true});
+const  client = new Discord.Client();
 
 client.commands = new Discord.Collection();
 
@@ -23,11 +23,14 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-
-client.on("ready", async () => {
-  console.log(`${bot.user.username} is online on ${client.guilds.size} servers!`);
-
-  client.user.setActivity("tutoriales", {type: "WATCHING"});
+client.on("ready", () => {
+   console.log("Estoy listo!");
+client.user.setPresence( {
+       status: "online",
+       game: {
+           name: "Cargando Codigo...",
+           type: "WATCHING"
+       }
    });
 
    client.on("guildMemberAdd", (member) => {
@@ -35,6 +38,7 @@ client.on("ready", async () => {
    var canal = client.channels.get('123456789112455845');
    canal.send(`Saludos ${member.user}, bienvenido al servidor, pasala bien.`);
 
+   });
 });
 var prefix = config.prefix;
 
