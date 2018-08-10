@@ -19,7 +19,7 @@ client.on("message", (message) =>
  if (message.author.bot) return;
 
  let args = message.content.slice(prefix.length).trim().split(/ +/g);
- let cmd = cont.shift().toLowerCase();
+ let cmd = args.shift().toLowerCase();
 
   if(command === 'ban'){
 
