@@ -10,7 +10,7 @@ fs.readdir('./commands/',(err, files) =>{
 
   var jsfiles = files.filter(f => f.split('.').pop() === 'js');
   if (jsfiles.length <= 0) {return console.log("Comandos no encontrados...")}
-  else { console.log(jsfiles-length + 'commands found.')}
+  else { console.log(jsfiles.length + 'commands found.')}
 
   jsfiles.forEach{(f, i) => (
   var cmds = require('./commands/${f}');
