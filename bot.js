@@ -19,7 +19,7 @@ if(jsfile.length <= 0){
   jsfile.forEach((f, i) =>{
     let props = require(`./comandos/${f}`);
     console.log(`${f} loaded!`);
-    client.commands.set(props.help.name, props);
+    client.comandos.set(props.help.name, props);
    });
 
 });
