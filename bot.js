@@ -5,18 +5,18 @@ const fs = require("fs");
 
 client.commands = new Discord.Collection();
 
-fs.readdir('./commands/',(err, files) =>{
+fs.readdir(`./commands/`,(err, files) =>{
   if(err) console.error(err);
 
   var jsfiles = files.filter(f => f.split('.').pop() === 'js');
   if (jsfiles.length <= 0) {return console.log("Comandos no encontrados...")}
   else { console.log(jsfiles.length + 'commands found.')}
 
-  jsfiles.forEach{(f, i) => (
-  var cmds = require('./commands/${f}');
-  console.log('command ${f} loading...');
+  jsfiles.forEach((f, i) => {
+  var cmds = require(`./commands/${f}`);
+  console.log(`command ${f} loading...`);
   client.commands.set(cmds.config.command, cmds);
-  )}
+  })
 
 })
 

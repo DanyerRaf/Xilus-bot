@@ -1,9 +1,9 @@
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
 
   message.chanel.send({embed:{
     title: "ping!",
     description: "pong!",
-    color: 0x178589  
+    color: 0x178589
   }})
 
 }
