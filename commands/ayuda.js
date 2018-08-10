@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 
-module.exports.run = (client, message, args) =>{
+module.exports.run = async (client, message, args) => {
 
   message.channel.send({
 
@@ -45,4 +45,4 @@ module.exports.run = (client, message, args) =>{
 
 module.exports.help = {
   name: "ayuda"
-};
+}
