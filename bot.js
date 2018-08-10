@@ -16,10 +16,10 @@ readdir('./commands/', (err, files) => {
                 bot.aliases.set(alias, commandFile.help.name);
             });*/
         } catch (e) {
-            bot.log(`Unable to load command ${f}: ${e}`);
+            client.log(`Unable to load command ${f}: ${e}`);
         }
     });
-    bot.log(`Commands loaded!`);
+    client.log(`Commands loaded!`);
 });
 
 
