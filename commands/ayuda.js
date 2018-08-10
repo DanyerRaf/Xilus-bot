@@ -9,7 +9,7 @@ exports.run = (client, message, args) => {
           icon_url: client.user.avatarURL
       },
       title: "Enlace Embed",
-      description: "Mensaje de prueba para la descripcion del embed.",
+      description: "Comandos Registrados del Bot.",
       fields: [{
           name: "ban",
           value: "```Banear a un usuario especificado.```"
