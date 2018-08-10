@@ -1,13 +1,16 @@
 exports.run = (client, message, args) => {
 
-  {
-    message.delete (2000);{
-    const embed = new Discord.RichEmbed()
-    .setTitle("Los Invito a mi Servidor.")
-    .setColor("#f7640e")
-    .setAuthor(message.author.username, message.author.avatarURL);
-    message.channel.send({embed});
-  }
-};
+  message.channel.send(
+    {
+      message.delete (2000);{
+    client.generateInvite(["ADMINISTRATOR","MANAGE_CHANNELS","MANAGE_ROLES",
+                          "MANAGE_MESSAGES","SEND_MESSAGES","CONNECT","BAN_MEMBERS"])
+    .then(link =>{
+        message.channel.send('Link de invitación: '+ link);
+      });
+       }
+     }
+
+  );
 
 }
