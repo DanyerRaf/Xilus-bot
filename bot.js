@@ -1,27 +1,24 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const  bot = new Discord.Client();
 const fs = require("fs");
-const  client = new Discord.Client();
 
-client.commands = new Discord.Collection();
+bot.commands = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
+fs.readdir('./commands/'(err, files) =>{
+  if(err) console.error(err);
 
-  if(err) console.log(err);
+  var jsfiles = files.filter(f => f.split('.').pop() === 'js');
+  if (jsfiles.length <= 0) {return console.log("Comandos no encontrados...")}
+  else { console.log(jsfiles-length + 'commands found.')}
 
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("Couldn't find commands.");
-    return;
-  }
+  jsfiles.forEach{(f, i) => (
+  var cmds = require('./commands/${f}');
+  console.log('command ${f} loading...');
+  bot.commands.set(cmds.config.command, cmds);
+  )}
 
-  jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
-    console.log(`${f} loaded!`);
-    client.commands.set(props.help.name, props);
-  });
-
-});
+})
 
 client.on("ready", () => {
    console.log("Estoy listo!");
@@ -49,9 +46,14 @@ client.on("message", (message) =>
 
  const args = message.content.slice(prefix.length).trim().split(/ +/g);
  const command = args.shift().toLowerCase();
+ var cont = message.content.slice(prefix.length).split(" ");
+ var args = cont.slice(1);
 
- let commandfile = client.commands.get(cmd.slice(prefix.length));
-  if(commandfile) commandfile.run(client,message,args);
+ if (!message.content.startsWith(prefix)) return;
+
+ var cmd = bot.commands.get(cont[0])
+ if (cmd)
+ cmd.run(bot, message, args);
 
 //   if(command === 'ban'){
 //
