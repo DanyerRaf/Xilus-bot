@@ -18,8 +18,23 @@ client.on("message", (message) =>
  if (!message.content.startsWith(prefix)) return;
  if (message.author.bot) return;
 
+ let sender = message.author;
  let args = message.content.slice(prefix.length).trim().split(/ +/g);
  let cmd = args.shift().toLowerCase();
+
+ if (sender.bot) return;
+ if (!message.content.startsWith(prefix)) return;
+
+try{
+  let commandfile = require(`./commands/${cmd}.js`);
+  commandfile.run(bot, message, args);
+}catch(e) {
+  console.log(e.message);
+}finally {
+  console.log(`${message.author.username} ran the command: ${cmd}`);
+}
+
+ //comandos
 
   if(command === 'ban'){
 
