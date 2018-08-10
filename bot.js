@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
 const  client = new Discord.Client();
+const fs = require("fs")
 
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
