@@ -1,4 +1,4 @@
-exports.run = (bot, message, args) => {
+exports.run = (client, message, args) => {
 {
 
 
@@ -8,7 +8,7 @@ exports.run = (bot, message, args) => {
           if (message.mentions.users.size < 1) return message.reply('Debe mencionar a alguien.').catch(console.error);
           if(!razon) return message.channel.send('Escriba un razón, `>x ban @username [razón]`');
           if (!message.guild.member(user).bannable) return message.reply('No puedo banear al usuario mencionado.');
-
+          .then(m => {m.delete(2150);});
 
           message.guild.member(user).ban(razon);
           message.channel.send(`**${user.username}**, fue baneado del servidor, razón: ${razon}.`);
