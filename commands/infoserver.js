@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 module.exports.run = (client, message, args) => {
 
-  return message.channel.send( {
+
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
@@ -13,10 +13,7 @@ module.exports.run = (client, message, args) => {
     .addField("You Joined", message.member.joinedAt)
     .addField("Total Members", message.guild.memberCount);
 
-
-  });
-
-}
+ }
 module.exports.help ={
   name: "infoserver"
 }
