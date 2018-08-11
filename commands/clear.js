@@ -14,7 +14,8 @@ exports.run = (client, message, args) => {
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
     return message.channel.send('Los mensajes han sido eliminados!')
-    .then(m => {m.delete(2500);});
+    .addField(':tada: | Mensaje de Bienvenida')
+    .then(m => {m.delete(3000);});
 
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
