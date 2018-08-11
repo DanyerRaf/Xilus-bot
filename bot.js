@@ -11,7 +11,7 @@ client.on("ready", async () => {
 
   // setGame,setActivity
   client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v')
-  client.user.setGame('https://www.twitch.tv/randres');
+  client.user.setGame("client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v')",'https://www.twitch.tv/randres');
   //bot.user.setGame("on SourceCade!");
 
    });
