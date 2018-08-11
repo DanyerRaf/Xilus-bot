@@ -18,11 +18,11 @@ client.on("ready", async () => {
 
    client.on('guildMemberAdd', member => {
        let channel = member.guild.channels.find('name', 'welcome-logs')
-       let membericon = member.user.iconURL
+       let memberavatar = member.user.avatarURL
        if (!channel) return;
        let embed = new Discord.RichEmbed()
        .setColor('RANDOM')
-       .setThumbnail(membericon)
+       .setThumbnail(memberavatar)
        .addField(':busts_in_silhouette: | Nombre :',`${member}`)
        .addField(':tada: | Mensaje de Bienvenida', `Bienvenido a ${member.guild.name} ${member} nos da gusto verte por aquí.`)
        .addField(':id: | Usuario:', "**["+ ` ${member.id} ` + "]**")
