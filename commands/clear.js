@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
 
 {
-        message.delete (0000);
+        message.delete (0001);
 
      let messageCount = parseInt(args[o]);
 
@@ -16,5 +16,5 @@ exports.run = (client, message, args) => {
       return message.reply('El limite a eliminar es de 100 mensajes.');
     }
   };
- message.delete (2100);
+ 
 }
