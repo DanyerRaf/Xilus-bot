@@ -41,27 +41,11 @@ try{
 }
 
 client.on('guildMemberAdd', member => {
-    const welcomechannel = member.guild.channels.find('name', '421749579306762263')
+    console.log('user ' + member.user.username + 'se ha unido')
+    console.log(member)
 
-    var newuserjoinembed = new Discord.RichEmbed()
-      .setColor('00FF00')
-      .setAuthor(member.user.tag + ' has joined server', member.user.displayAvatarURL)
-      .addField(`:inbox_tray: Welcome To The Server ${member.user.tag}`)
-      .setFooter(`User joined`)
-      .setTimestamp()
-      return welcomechannel.send(newuserjoinembed);
-});
+    member.guild.channels.get('421749579306762263').send('**' + member.user.username +'**, se ha unido al servidor');
 
-bot.on('guildMemberRemove', member => {
-    const goodbyechannel = member.guild.channels.find('name', '421749579306762263')
-
-    var newuserjoinembed = new Discord.RichEmbed()
-      .setColor('#FF0000')
-      .setAuthor(member.user.tag + ' has left server', member.user.displayAvatarURL)
-      .addField(`:outbox_tray: Goodbye ${member.user.name} :disappointed_relieved: `)
-      .setFooter(`User left`)
-      .setTimestamp()
-      return goodbyechannel.send(newuserjoinembed);
 });
  //comandos
 
