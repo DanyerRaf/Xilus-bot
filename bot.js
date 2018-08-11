@@ -32,9 +32,6 @@ client.on("message", (message) =>
 
 try{
 
-  delete require.cache[require.resolve(`./commands/${cmd}.js`)];
-
-
   let commandfile = require(`./commands/${cmd}.js`);
   commandfile.run(client, message, args);
 }catch(e) {
