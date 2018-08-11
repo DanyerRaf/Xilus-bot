@@ -7,7 +7,7 @@ client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
   // estado = Online,dnd
-  client.user.setStatus("dnd");
+  client.user.setStatus("Online");
 
   // setActivity
   client.user.setActivity("Discord", {type: "WATCHING"});
@@ -15,6 +15,30 @@ client.on("ready", async () => {
   //client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v','https://www.twitch.tv/randres');
 
    });
+
+   client.on('guildMemberAdd', member => {
+       let channel = member.guild.channels.find('name', 'welcome-logs')
+       let memberavatar = member.user.avatarURL
+       if (!channel) return;
+       let embed = new Discord.RichEmbed()
+       .setColor('RANDOM')
+       .setThumbnail(memberavatar)
+       .addField(':bust_in_silhouette: | Name : ', `${member}`)
+       .addField(':microphone2: | Welcome', `Bienvenido al servidor, ${member} eres grandioso.`)
+       .addField(':id: | User:', "**["+ ` ${member.id} ` + "]**")
+       .addField(':family_mmgb: | You are the user', `${member.guild.memberCount}`)
+       .addField("Name", `<@` + `${member.id}` + `>`, true)
+       .addField('Server', `${member.guild.name}`, true)
+       .setFooter(`**${member.guild.name}**`)
+       .setTimestamp()
+
+       channel.send(embed);
+      })
+
+      client.on('guildMemberAdd', member => {
+       console.log(`${member.displayName}`, "Se ha unido. " +  `${member.guild.name}`)
+
+     })
 
 var prefix = config.prefix;
 
@@ -40,29 +64,6 @@ try{
   console.log(`${message.author.username} ran the command: ${cmd}`);
 }
 
-client.on('guildMemberAdd', member => {
-    let channel = member.guild.channels.find('name', 'welcome-logs')
-    let memberavatar = member.user.avatarURL
-    if (!channel) return;
-    let embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setThumbnail(memberavatar)
-    .addField(':bust_in_silhouette: | Name : ', `${member}`)
-    .addField(':microphone2: | Welcome', `Bienvenido al servidor, ${member} eres grandioso.`)
-    .addField(':id: | User:', "**["+ ` ${member.id} ` + "]**")
-    .addField(':family_mmgb: | You are the user', `${member.guild.memberCount}`)
-    .addField("Name", `<@` + `${member.id}` + `>`, true)
-    .addField('Server', `${member.guild.name}`, true)
-    .setFooter(`**${member.guild.name}**`)
-    .setTimestamp()
-
-    channel.send(embed);
-   })
-
-   client.on('guildMemberAdd', member => {
-    console.log(`${member.displayName}`, "Se ha unido. " +  `${member.guild.name}`)
-
-  })
 
  //comandos
 
