@@ -1,4 +1,5 @@
-exports.run = (client, message, args) => {
+const Discord = require("discord.js");
+module.exports.run = (client, message, args) => {
 
   return message.channel.send( {
 
@@ -15,4 +16,7 @@ exports.run = (client, message, args) => {
 
   });
 
+}
+module.exports.help ={
+  name: "infoserver"
 }
