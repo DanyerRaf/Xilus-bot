@@ -24,7 +24,7 @@ client.on("ready", async () => {
        .setColor('RANDOM')
        .setThumbnail(memberavatar)
        .addField(':busts_in_silhouette: | Nombre :',`${member}`)
-       .addField(':tada: | Mensaje de Bienvenida', `Bienvenido ${member} nos da gusto verte por aquí.`)
+       .addField(':tada: | Mensaje de Bienvenida', `Bienvenido a ${member.guild.name} ${member} nos da gusto verte por aquí.`)
        .addField(':id: | Usuario:', "**["+ ` ${member.id} ` + "]**")
        .addField(':tickets: | Eres el numero:', `${member.guild.memberCount}`)
 
