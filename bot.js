@@ -6,7 +6,7 @@ const fs = require('fs');
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  client.user.setActivity("League of Legends", {type: "PLAYING"});
+  client.user.setGame("League of Legends", {type: "PLAYING"});
 
   //bot.user.setGame("on SourceCade!");
 
