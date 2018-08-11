@@ -9,10 +9,10 @@ client.on("ready", async () => {
   // estado = Online,dnd
   client.user.setStatus("Online");
 
-  // setGame,setActivity
-  client.user.setActivity('Discord');
+  // setActivity
+  client.user.setActivity("Discord", {type: "WATCHING"});
+
   //client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v','https://www.twitch.tv/randres');
-  //bot.user.setGame("on SourceCade!");
 
    });
 
