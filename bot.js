@@ -7,7 +7,7 @@ client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
   // estado = Online,dnd
-  client.user.setStatus("Online");
+  client.user.setStatus("dnd");
 
   // setActivity
   client.user.setActivity("Discord", {type: "WATCHING"});
