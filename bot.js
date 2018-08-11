@@ -43,6 +43,31 @@ try{
   console.log(`${message.author.username} ran the command: ${cmd}`);
 }
 
+  // cuando un usuario se une al servidor.
+bot.on('guildMemberAdd', member => {
+    const welcomechannel = member.guild.channels.find('name', 'join-left')
+
+    var newuserjoinembed = new Discord.RichEmbed()
+      .setColor('00FF00')
+      .setAuthor(member.user.tag + ' has joined server', member.user.displayAvatarURL)
+      .addField(`:inbox_tray: Welcome To The Server ${member.user.tag}`)
+      .setFooter(`User joined`)
+      .setTimestamp()
+      return welcomechannel.send(newuserjoinembed);
+});
+
+  //Cuando un usuario se va del servidor.
+bot.on('guildMemberRemove', member => {
+    const goodbyechannel = member.guild.channels.find('name', 'join-left')
+
+    var newuserjoinembed = new Discord.RichEmbed()
+      .setColor('#FF0000')
+      .setAuthor(member.user.tag + ' has left server', member.user.displayAvatarURL)
+      .addField(`:outbox_tray: Goodbye ${member.user.name} :disappointed_relieved: `)
+      .setFooter(`User left`)
+      .setTimestamp()
+      return goodbyechannel.send(newuserjoinembed);
+});
  //comandos
 
 //   if(command === 'ban'){
