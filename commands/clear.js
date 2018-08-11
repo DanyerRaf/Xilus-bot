@@ -1,7 +1,7 @@
 exports.run = (client, message, args) => {
 
 {
-      
+
 
      let messageCount = parseInt(args[0]);
 
@@ -14,10 +14,7 @@ exports.run = (client, message, args) => {
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
     if (msg.startsWith("clear")){
-
       message.delete(1000);
-      message.reply("Los mensajes han sido borrados").then(d_msg => {d_msg.delete(3000); });
-    }
 
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
