@@ -10,7 +10,7 @@ client.on("ready", async () => {
   client.user.setStatus("Online");
 
   // setActivity
-  client.user.setActivity("RANDOM", {type: "RANDOM"});
+  client.user.setActivity("atom", {type: "PLAYING"});
 
   //client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v','https://www.twitch.tv/randres');
 
