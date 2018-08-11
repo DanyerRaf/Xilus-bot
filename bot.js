@@ -8,7 +8,9 @@ client.on("ready", async () => {
 
   // estado = Online,dnd
   client.user.setStatus("dnd");
+
   // setGame,setActivity
+  client.user.setGame('#JuevesSinManos - Dioses del rainbow denme manos :v')
   client.user.setGame('https://www.twitch.tv/randres');
   //bot.user.setGame("on SourceCade!");
 
