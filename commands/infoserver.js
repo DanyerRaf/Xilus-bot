@@ -15,6 +15,6 @@ exports.run = (client, message, args) => {
     .addField("Total Members", message.guild.memberCount);
 
 
-  });
+  })
 
-}
+};
