@@ -10,7 +10,7 @@ exports.run = (client, message, args) => {
 
      if(messageCount >= 1 && messageCount <= 100){
     message.channel.fetchMessages({limit: messageCount})
-    .then(messages => message.channel.bulkDelete(messages);)
+    .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
     return message.channel.send('Los mensajes han sido eliminados!')
