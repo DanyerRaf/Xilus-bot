@@ -45,7 +45,7 @@ try{
 
   // cuando un usuario se une al servidor.
 bot.on('guildMemberAdd', member => {
-    const welcomechannel = member.guild.channels.find('name', 'join-left')
+    const welcomechannel = member.guild.channels.get('421749579306762263').send({
 
     var newuserjoinembed = new Discord.RichEmbed()
       .setColor('00FF00')
@@ -54,6 +54,7 @@ bot.on('guildMemberAdd', member => {
       .setFooter(`User joined`)
       .setTimestamp()
       return welcomechannel.send(newuserjoinembed);
+  })
 });
 
   //Cuando un usuario se va del servidor.
