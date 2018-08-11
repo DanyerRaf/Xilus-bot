@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 exports.run = (client, message, args) => {
 
-  return message.channel.send( {
+    message.channel.send( {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
