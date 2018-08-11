@@ -14,7 +14,6 @@ exports.run = (client, message, args) => {
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
-      .then(m => {m.delete(2150);});
     }
   };
  message.delete (2100);
