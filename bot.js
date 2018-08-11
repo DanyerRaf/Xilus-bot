@@ -23,12 +23,11 @@ client.on("ready", async () => {
        let embed = new Discord.RichEmbed()
        .setColor('RANDOM')
        .setThumbnail(memberavatar)
-       .addField(':bust_in_silhouette: | Nombre :',`${member}`)
+       .addField(':busts_in_silhouette: | Nombre :',`${member}`)
        .addField(':tada: | Bienvenida', `Bienvenido ${member} nos da gusto verte por aquí.`)
        .addField(':id: | Usuario:', "**["+ ` ${member.id} ` + "]**")
        .addField(':tickets: | Eres el numero:', `${member.guild.memberCount}`)
-       .addField("Nombre", `<@` + `${member.id}` + `>`, true)
-       .addField('Servidor:', `${member.guild.name}`, true)
+       
        .setFooter(`**${member.guild.name}**`)
        .setTimestamp()
 
