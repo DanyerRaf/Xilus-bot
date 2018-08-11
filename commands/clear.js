@@ -7,13 +7,15 @@ exports.run = (client, message, args) => {
 
      if(!messageCount) return message.reply('Escriba la cantidad a eliminar')
     .then(m => {m.delete(2150);});
-     message.delete (2100);
+
      if(messageCount >= 2 && messageCount <= 100){
     message.channel.fetchMessages({limit: messageCount})
     .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+    message.delete (2100);
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
+      .then(m => {m.delete(2150);});
     }
   };
  message.delete (2100);
