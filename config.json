@@ -1,5 +1,5 @@
 {
-"token":process.env.token,
+"token":"process.env.TOKEN",
 "prefix":">x ",
 "IdOwner":"387736495013888023"
 }
