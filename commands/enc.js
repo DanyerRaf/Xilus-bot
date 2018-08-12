@@ -8,15 +8,16 @@ const Discord = require("discord.js");
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
     const embed = new Discord.MessageEmbed()
+    Discord.RichEmbed()
     .setColor("#34e9c3")
     .setFooter('vota con las reacciones')
-    .setDescription(args.join(' '))
+    .setDescription('a ver')
     .setTitle(`Enc. creada por ${message.author.username}`);
 
     let msg = await message.channel.send(embed);
 
-    await msg.react('✅');
-    await msg.react('❌');
+    await msg.react('⏪').then( r => {
+    await msg.react('⏩')});
 
     message.delete({timeout: 1000});
 
