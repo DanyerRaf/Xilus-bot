@@ -14,11 +14,13 @@ const Discord = require("discord.js");
     .setDescription('a ver')
     .setTitle(`Enc. creada por ${message.author.username}`);
 
-    let msg = await message.channel.send(embed);
+    let message.channel.send(embed).then(msg => {
 
     await msg.react('⏪').then( r => {
-    await msg.react('⏩')});
+    await msg.react('⏩')
 
+  });
+});
     message.delete({timeout: 1000});
 
   }
