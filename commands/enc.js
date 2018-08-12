@@ -3,9 +3,8 @@ const Discord = require("discord.js");
   exports.run = async (client, message, args,tools) => {
 
     if (!message.member.roles.find(r => r.name === 'ADMINISTRADOR'))return message.channel.send('Este comando requiere el rol: ADMINISTRADOR');
-    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRATOR');
 
-    if (!args[0]) return message.channel.send('Proper Usage: <prefix>enc question');
+    if (!args[0]) return message.channel.send('Proper Usage: <prefijo> enc pregunta');
 
     const embed = new Discord.MessageEmbed()
     .setColor(0xffffff)
