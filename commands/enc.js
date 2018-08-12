@@ -7,8 +7,8 @@ const Discord = require("discord.js");
 
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
-    let embed = new Discord.messageEmbed()
-    .setColor("#34e9c3")
+    let embed = new Discord.RichEmbed()
+    .setColor(0xa4ff00)
     .setFooter('vota con las reacciones')
     .setDescription(args.join(' '))
     .setTitle(`Enc. creada por ${message.author.username}`);
