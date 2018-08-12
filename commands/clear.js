@@ -13,12 +13,18 @@ exports.run = (client, message, args) => {
     .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
-    return message.channel.send(`He eliminado los mensajes por ti! icon_url:https://cdn.discordapp.com/emojis/403540169992568833.png`)
+    return message.channel.send({
+
+          embed: {
+          color: 0xa4ff00,
+          title: "Enlace Embed",
+
+
     .then(m => {m.delete(2800);});
 
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
     }
-  };
- message.delete (2100);
+  });
+
 }
