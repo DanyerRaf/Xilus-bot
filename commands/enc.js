@@ -8,7 +8,7 @@ const Discord = require("discord.js");
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
     const embed = new Discord.MessageEmbed()
-    Discord.RichEmbed()
+    
     .setColor("#34e9c3")
     .setFooter('vota con las reacciones')
     .setDescription('a ver')
