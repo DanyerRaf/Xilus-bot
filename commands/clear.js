@@ -4,7 +4,7 @@ exports.run = (client, message, args) => {
         message.delete (2100);
 
      let messageCount = parseInt(args[0]);
-     let icon = avatarURL('https://cdn.discordapp.com/emojis/469263544198889492.png?v=1')
+      avatarURL = ('https://cdn.discordapp.com/emojis/469263544198889492.png?v=1')
      if(!messageCount) return message.reply('Escriba la cantidad a eliminar')
     .then(m => {m.delete(2130);});
 
