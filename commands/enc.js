@@ -7,7 +7,7 @@ const Discord = require("discord.js");
     if (!args[0]) return message.channel.send('Proper Usage: <prefijo> enc pregunta');
 
     const embed = new Discord.MessageEmbed()
-    .setColor(#65d5ff)
+    .setColor(0xffffff)
     .setFooter('React to vote')
     .setDescription(args.join(' '))
     .setTitle(`enc creada por ${message.author.username}`);
