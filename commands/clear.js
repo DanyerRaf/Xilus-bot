@@ -3,7 +3,7 @@ exports.run = (client, message, args) => {
 {
         message.delete (2100);
 
-     let messageCount = parseInt(args[0]);
+     let messageCount = parseInt(args[0]++);
 
      if(!messageCount) return message.reply('Escriba la cantidad a eliminar')
     .then(m => {m.delete(2130);});
