@@ -6,7 +6,7 @@ const Discord = require("discord.js");
     if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR');
 
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
-    message.channel.send({
+
     const embed = new Discord.MessageEmbed()
     .setColor("#34e9c3")
     .setFooter('vota con las reacciones')
@@ -19,6 +19,5 @@ const Discord = require("discord.js");
     await msg.react('❌');
 
     message.delete({timeout: 1000});
-
-  });   
+  
 }
