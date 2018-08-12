@@ -18,6 +18,6 @@ const Discord = require("discord.js");
     await msg.react('✅');
     await msg.react('❌');
 
-    message.delete({timeout: 1000});
+    message.delete({timeout: 500});
 
 }
