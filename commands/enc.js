@@ -14,8 +14,8 @@ const Discord = require("discord.js");
 
     let msg = await message.channel.send(embed);
 
-    await msg.react('✅');
-    await msg.react('❌');
+    await msg.react(':white_check_mark:');
+    await msg.react(':no_entry:');
 
     message.delete({timeout: 1500});
 
