@@ -12,7 +12,7 @@ client.on("ready", async () => {
   // setActivity
   //client.user.setActivity("atom", {type: "PLAYING"});
 
-  client.user.setGame('#SabadoOcioso - despues de un dia','https://www.twitch.tv/randres');
+  client.user.setGame('','https://www.twitch.tv/dafly_1');
 
    });
 
