@@ -16,8 +16,8 @@ const Discord = require("discord.js");
 
     let message.channel.send(embed).then(msg => {
 
-    await msg.react('⏪').then( r => {
-    await msg.react('⏩')
+    msg.react('⏪').then( r => {
+    msg.react('⏩')
 
   });
 });
