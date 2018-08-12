@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
-    return message.channel.send(`Los mensajes han sido eliminados! https://cdn.discordapp.com/emojis/403540169992568833.png`)
+    return message.channel.send(`He eliminado los mensajes por ti! icon_url:https://cdn.discordapp.com/emojis/403540169992568833.png`)
     .then(m => {m.delete(2800);});
 
      }else{
