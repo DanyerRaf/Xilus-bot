@@ -9,7 +9,7 @@ exports.run = async (client, message, args, tools) => {
     .setThumbnail(sicon)
     .addField("Nombre del servidor:", message.guild.name)
     .addField("Creado:", message.guild.createdAt)
-    .addField("Te Uniste el:", message.member.joinedAt)
+    .addField("Te Uniste:", message.member.joinedAt)
     .addField("Miembros del Servidor:", message.guild.memberCount);
 
     let msg = await message.channel.send(serverembed);
