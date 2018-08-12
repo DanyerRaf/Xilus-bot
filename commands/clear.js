@@ -13,7 +13,7 @@ exports.run = (client, message, args) => {
     .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
-    return message.channel.send(messages.size + ' mensajes, borrados...')
+    return message.channel.send(args.size + ' mensajes, borrados...')
     .then(m => {m.delete(2800);});
 
      }else{
