@@ -11,7 +11,7 @@ const Discord = require("discord.js");
     .setColor(0xa4ff00)
     .setFooter('vota con las reacciones')
     .setDescription(args.join(' '))
-    .setTitle(`Enc. creada por ${message.author.username}`);
+    .setTitle(`Encuesta creada por ${message.author.username}`);
 
     let msg = await message.channel.send(embed);
 
