@@ -12,7 +12,7 @@ client.on("ready", async () => {
   // setActivity
   //client.user.setActivity("atom", {type: "PLAYING"});
 
-  client.user.setGame('https://www.twitch.tv/dafly_1');
+  client.user.setGame('#Domingo Ramdom','https://www.twitch.tv/dafly_1');
 
    });
 
