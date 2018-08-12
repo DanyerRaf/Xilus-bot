@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
   exports.run = async (client, message, args,tools) => {
 
-    if (!message.member.roles.find(r => r.name === 'roleName'))return message.channel.send('Este comando requiere el rol: roleName');
+    if (!message.member.roles.find(r => r.name === 'ADMINISTRADOR'))return message.channel.send('Este comando requiere el rol: roleName');
     if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR');
 
     if (!args[0]) return message.channel.send('Proper Usage: <prefix>enc question');
