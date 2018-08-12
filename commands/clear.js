@@ -12,8 +12,9 @@ exports.run = (client, message, args) => {
     message.channel.fetchMessages({limit: messageCount})
     .then(messages => message.channel.bulkDelete(messages))
     .catch(error => message.reply(`No he podido eliminarlos a causa de: ${error}`));
+
+    return message.channel.send('He eliminado los mensajes por ti!')
     .setThumbnail(avatarURL)
-    return message.channel.send(`He eliminado los mensajes por ti!`)
     .then(m => {m.delete(2800);});
      }else{
       return message.reply('El limite a eliminar es de 100 mensajes.');
