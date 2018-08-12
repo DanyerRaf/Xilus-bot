@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 exports.run = async (client, message, args, tools) => {
 
     let sicon = message.guild.iconURL;
-    let serverembed = new Discord.RichEmbed()
+    const serverembed = new Discord.RichEmbed()
     .setDescription("Informacion del Servidor")
     .setColor("#15f153")
     .setThumbnail(sicon)
@@ -11,6 +11,8 @@ exports.run = async (client, message, args, tools) => {
     .addField("Created On", message.guild.createdAt)
     .addField("You Joined", message.member.joinedAt)
     .addField("Total Members", message.guild.memberCount);
+
+    let msg = await message.channel.send(serverembed);
 
 
 };
