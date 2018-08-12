@@ -6,13 +6,13 @@ const fs = require('fs');
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  // estado = Online,dnd
+  // estado = Online,dnd,idle
   client.user.setStatus("idle");
 
   // setActivity
   //client.user.setActivity("atom", {type: "PLAYING"});
 
-  client.user.setGame('#Domingo Ramdom','https://www.twitch.tv/dafly_1');
+  client.user.setGame('atom')//,'https://www.twitch.tv/dafly_1');
 
    });
 
