@@ -34,10 +34,6 @@ client.on("ready", async () => {
        channel.send(embed);
       })
 
-      client.on('guildMemberAdd', member => {
-       console.log(`${member.displayName}`, "Se ha unido. " +  `${member.guild.name}`)
-
-     })
 
 var prefix = config.prefix;
 
