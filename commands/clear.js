@@ -14,7 +14,6 @@ exports.run = (client, message, args) => {
     .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
 
     return message.channel.send('Los mensajes han sido eliminados!')
-    .then(messages => message.channel.delete(messageCount))
     .then(m => {m.delete(3000);});
 
      }else{
