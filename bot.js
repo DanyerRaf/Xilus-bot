@@ -6,8 +6,8 @@ const fs = require('fs');
 client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
-  // estado = Online,dnd,idle
-  client.user.setStatus("dnd");
+  // estado = Online,idle,dnd
+  client.user.setStatus("idle");
 
   // setActivity
   //client.user.setActivity("atom", {type: "PLAYING"});
