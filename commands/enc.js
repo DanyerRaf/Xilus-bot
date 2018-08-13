@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
     if (!message.member.roles.find(r => r.name === 'Administrador'))return message.channel.send('Este comando requiere el rol: Administrador')
     .then(m => {m.delete(3000);});
-    if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR');
+    if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR')
     .then(m => {m.delete(3000);});
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
