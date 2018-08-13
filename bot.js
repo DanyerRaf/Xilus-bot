@@ -7,7 +7,7 @@ client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
   // estado = Online,idle,dnd
-  client.user.setStatus("Online");
+  client.user.setStatus("idle");
 
   // setActivity  WATCHING,PLAYING
   client.user.setActivity("YouTube", {type: "WATCHING"});
