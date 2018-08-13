@@ -10,8 +10,8 @@ exports.run = async (client, message, args) => {
     .addField("Nombre del servidor:", message.guild.name)
     .addField("Creado:", message.guild.createdAt)
     .addField("Te Uniste:", message.member.joinedAt)
-    .addField("Miembros del Servidor:", message.guild.memberCount);
-
+    .addField("Miembros del Servidor:", message.guild.memberCount)
+    .addField("Creador:",message.owner.discriminator);
     let msg = message.channel.send(serverembed);
 
 };
