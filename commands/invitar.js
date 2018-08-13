@@ -6,6 +6,8 @@ exports.run = (client, message, args) => {
     .setColor("#f7640e")
     .setAuthor(message.author.username, message.author.avatarURL);
     message.channel.send({embed});
+
+    let msg = message.channel.send(embed);
   }
 
 }
