@@ -12,7 +12,5 @@ exports.run = async (client, message, args) => {
     .addField("Te Uniste:", message.member.joinedAt)
     .addField("Miembros del Servidor:", message.guild.memberCount);
 
-    let msg = await message.channel.send(serverembed);
-
-
+  
 };
