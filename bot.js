@@ -9,10 +9,10 @@ client.on("ready", async () => {
   // estado = Online,idle,dnd
   client.user.setStatus("Online");
 
-  // setActivity
-  //client.user.setActivity("atom", {type: "PLAYING"});
+  // setActivity  WATCHING,PLAYING
+  client.user.setActivity(">x ayuda", {type: "WATCHING"});
 
-  client.user.setActivity('>x ayuda');  //,'https://www.twitch.tv/dafly_1');
+  //client.user.setGame('>x ayuda');  //,'https://www.twitch.tv/dafly_1');
 
    });
 
