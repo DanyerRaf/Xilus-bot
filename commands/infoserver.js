@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
-exports.run = async (client, message, args) => {
+exports.run = (client, message, args) => {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription("Informacion del Servidor")
+    .setTitle("Informacion del Servidor")
     .setColor("#15f153")
     .setThumbnail(sicon)
     .addField("Nombre del servidor:", message.guild.name)
