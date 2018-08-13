@@ -14,5 +14,4 @@ exports.run = async (client, message, args) => {
 
     let msg = message.channel.send(serverembed);
 
-
 };
