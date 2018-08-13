@@ -19,17 +19,22 @@ exports.run = (client, message, args) => {
           value: "```Borrar cierta cantidad de publicaciones.```"
       },
       {
-          name: "invitarbot",
-          value: "```Crea una invitacion del bot.```"
+          name: "enc",
+          value: "```Ayuda a crear una encuesta.```"
+      },
+      {
+          name: "infoserver",
+          value: "```Muestra informacion acerca del servidor.```"
       },
       {
           name: "invitar",
           value: "```Crea una invitacion del servidor.```"
       },
       {
-          name: "ayuda",
-          value: "```Muestra los comandos que puedes utilizar.```"
-      }
+          name: "invitarbot",
+          value: "```Crea una invitacion del bot.```"
+      },
+
       ],
       timestamp: new Date(),
           footer: {
