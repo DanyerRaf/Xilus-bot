@@ -1,5 +1,0 @@
-{
-"token":"process.env.TOKEN",
-"prefix":">x ",
-"IdOwner":"process.env.IdOwner"
-}
