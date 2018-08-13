@@ -17,7 +17,7 @@ client.on("ready", async () => {
    });
 
    client.on('guildMemberAdd', member => {
-       var channel = member.guild.channels.find('name', 'nuevo-invocador', 'nuevo-pasajero')
+       let channel = member.guild.channels.find('name', 'nuevo-pasajero')
        let memberavatar = member.user.avatarURL
        if (!channel) return;
        let embed = new Discord.RichEmbed()
