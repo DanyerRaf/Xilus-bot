@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
   exports.run = async (client, message, args,tools) => {
 
-    message.delete (2000);
+    message.delete (2800);
     if (!message.member.roles.find(r => r.name === 'Administrador'))return message.channel.send('Este comando requiere el rol: Administrador')
     .then(m => {m.delete(3000);});
     if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR')
