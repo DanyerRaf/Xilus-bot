@@ -4,7 +4,10 @@ const Discord = require("discord.js");
 
     message.delete (2800);
 
-  
+    /*if (!message.member.roles.find(r => r.name === 'Administrador'))return message.channel.send('Este comando requiere el rol: Administrador')
+    .then(m => {m.delete(2950);});
+    if (!message.member.hasPermission('ADMINISTRATOR')) return message.channel.send('Este comando requiere permisos de: Administrador')
+    .then(m => {m.delete(2950);});*/
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
     let embed = new Discord.RichEmbed()
