@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 
 exports.run = async (client, message, args) => {
-    message.delete (1000);
+    
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
     .setTitle("Informacion del Servidor")
