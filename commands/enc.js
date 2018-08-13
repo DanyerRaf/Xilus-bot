@@ -2,12 +2,12 @@ const Discord = require("discord.js");
 
   exports.run = async (client, message, args,tools) => {
 
-    message.delete (2900);
+    message.delete (2800);
 
     if (!message.member.roles.find(r => r.name === 'Administrador'))return message.channel.send('Este comando requiere el rol: Administrador')
-    .then(m => {m.delete(3000);});
+    .then(m => {m.delete(2950);});
     if (!message.member.hasPermission('ADMINISTRADOR')) return message.channel.send('Este comando requiere permisos: ADMINISTRADOR')
-    .then(m => {m.delete(3000);});
+    .then(m => {m.delete(2950);});
     if (!args[0]) return message.channel.send('Como usar: <prefix> enc pregunta');
 
     let embed = new Discord.RichEmbed()
