@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-exports.run = (client, message, args) => {
+exports.run = async (client, message, args) => {
 
 
     let guild = message.channel.guild;
