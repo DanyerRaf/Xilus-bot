@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
+exports.run = (client, message, args) => {
 
-	exports.run = async (client, message, args,tools) => {
 
     let guild = message.channel.guild;
 		let botCount = guild.members.filter(member => member.user.bot).length;
 		let owner = guild.members.get(guild.ownerID).user;
 
-		return __("commands.default.serverInfo.success", message, {
+		message.channel.send("commands.default.serverInfo.success", message, {
 			guild: guild.name,
 			channels: guild.channels.size,
 			members: guild.memberCount,
@@ -19,7 +19,7 @@ const Discord = require("discord.js");
 			ownerID: owner.id,
 			icon: guild.iconURL ? `<${guild.iconURL}>` : __("words.none", message, {}, true)
 		});
-    
+
 	guildOnly: true,
 	aliases: ["guildinfo"],
 	description: "Get info about the guild this command was executed in"
