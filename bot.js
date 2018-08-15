@@ -7,10 +7,10 @@ client.on("ready", async () => {
   console.log(`${client.user.username} is online on ${client.guilds.size} servers!`);
 
   // estado = Online,idle,dnd
-  client.user.setStatus("idle");
+  client.user.setStatus("Online");
 
   // setActivity  WATCHING,PLAYING
-  client.user.setActivity("YouTube", {type: "WATCHING"});
+  client.user.setActivity("CS:GO", {type: "PLAYING"});
 
   //client.user.setGame('>x ayuda');  //,'https://www.twitch.tv/dafly_1');
 
