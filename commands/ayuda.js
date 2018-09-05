@@ -39,7 +39,7 @@ exports.run = (client, message, args) => {
       timestamp: new Date(),
           footer: {
               icon_url: client.user.avatarURL,
-              text: "Bot Oficial del sservidor `Xilus Gaming`",
+              text: "Bot creado por: 𝑫𝒂𝑭𝒍𝒚 ♛#3281",
           }
       }
   });
