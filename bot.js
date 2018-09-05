@@ -10,7 +10,7 @@ client.on("ready", async () => {
   client.user.setStatus("Online");
 
   // setActivity  WATCHING,PLAYING
-  client.user.setActivity("CS:GO", {type: "PLAYING"});
+  client.user.setActivity("League of Legends", {type: "PLAYING"});
 
   //client.user.setGame('>x ayuda');  //,'https://www.twitch.tv/dafly_1');
 
